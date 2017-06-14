@@ -1,0 +1,13 @@
+<div class="container">
+  <div class="wrapper col-md-8 col-md-offset-2 col-sm-10">
+      <h1>Achieve Poems</h1>
+      <div class="row">
+          <% @herpoems.each do |herpoem| %>
+          <div class="row">
+            <p><%= herpoem.title %></p>
+            <p><%= herpoem.content %></p>
+            <p><%= link_to "詳細表示", herpoem_path(herpoem.id) %></p>
+        　</div>
+    <% end %>
+  </div>
+</div>
