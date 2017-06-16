@@ -23,6 +23,11 @@ class BlogsController < ApplicationController
 #    redirect_to blogs_path, notice: "ブログを作成しました！"
 #  end
 
+  def show
+    @comment = @blog.comments.build
+    @comments = @blog.comments
+  end
+
   def create
     @blog = Blog.new(blogs_params)
     @blog.user_id = current_user.id
