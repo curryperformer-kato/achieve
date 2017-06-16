@@ -56,3 +56,13 @@ gem 'rails_admin'
 gem 'cancan'
 gem 'activeresource'
 gem "her"
+gem 'omniauth'
+gem 'omniauth-twitter'
+gem 'omniauth-facebook'
+gem 'carrierwave'
+gem 'rmagick'
+gem 'mini_magick'
+
+group :development do
+gem 'dotenv-rails'
+end
