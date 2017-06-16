@@ -35,7 +35,7 @@ class BlogsController < ApplicationController
   end
 
   def edit
-    @blog = Blog.find(params[:id])
+    # @blog = Blog.find(params[:id])
   end
 
 #  def update
@@ -45,7 +45,7 @@ class BlogsController < ApplicationController
 #  end
 
   def update
-    @blog = Blog.find(params[:id])
+    # @blog = Blog.find(params[:id])
     @blog.update(blogs_params)
     if @blog.save
       redirect_to blogs_path, notice: "ブログを更新しました！"
@@ -55,7 +55,7 @@ class BlogsController < ApplicationController
   end
 
   def destroy
-    @blog = Blog.find(params[:id])
+    # @blog = Blog.find(params[:id])
     @blog.destroy
     redirect_to blogs_path, notice: "ブログを削除しました！"
   end
