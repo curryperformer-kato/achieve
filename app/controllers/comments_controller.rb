@@ -32,10 +32,8 @@ class CommentsController < ApplicationController
   def destroy
     @comment.destroy
     respond_to do |format|
-      if @comment.destroy
       format.html { redirect_to blog_path(@blog), notice: 'コメントを削除しました。' }
       format.js { render :index }
-      end
     end
   end
 
