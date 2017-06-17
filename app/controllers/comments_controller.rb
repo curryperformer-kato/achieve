@@ -21,9 +21,11 @@ class CommentsController < ApplicationController
   def update
     @comment.update(comment_params)
     respond_to do |format|
-      if @comment.update
+      if @comment.save
       format.html { redirect_to blog_path(@blog), notice: 'コメントを削除しました。' }
       format.js { render :edit }
+      else
+      render 'new'
       end
     end
   end
