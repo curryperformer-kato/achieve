@@ -1,6 +1,6 @@
 class CommentsController < ApplicationController
 
-  before_action :set_comment, only: [:destroy]
+  before_action :set_comment, only: [:edit, :destroy]
 
   def create
     @comment = current_user.comments.build(comment_params)
@@ -11,6 +11,19 @@ class CommentsController < ApplicationController
         format.js { render :index }
       else
         format.html { render :new }
+      end
+    end
+  end
+
+  def edit
+  end
+
+  def update
+    @comment.update(comment_params)
+    respond_to do |format|
+      if @comment.update
+      format.html { redirect_to blog_path(@blog), notice: 'コメントを削除しました。' }
+      format.js { render :edit }
       end
     end
   end
