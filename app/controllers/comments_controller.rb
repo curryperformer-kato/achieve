@@ -19,11 +19,11 @@ class CommentsController < ApplicationController
   end
 
   def update
-    @comment.update(comment_params)
+    @comment.update(params.require(:comment).permit(:blog, :comment))
     respond_to do |format|
       if @comment.save
       format.html { redirect_to blog_path(@blog), notice: 'コメントを更新しました。' }
-      format.js { render :form }
+      format.js { render :index }
       else
       render 'new'
       end
