@@ -1,6 +1,6 @@
 class CommentsController < ApplicationController
 
-  before_action :set_comment, only: [:edit, :destroy]
+  before_action :set_comment, only: [:edit, :update, :destroy]
 
   def create
     @comment = current_user.comments.build(comment_params)
@@ -19,7 +19,7 @@ class CommentsController < ApplicationController
   end
 
   def update
-    @comment.update(params.require(:comment).permit(:blog, :comment))
+    @comment.update(comment_params)
     respond_to do |format|
       if @comment.save
       format.html { redirect_to blog_path(@blog), notice: 'コメントを更新しました。' }
