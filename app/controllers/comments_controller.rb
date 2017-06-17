@@ -23,7 +23,7 @@ class CommentsController < ApplicationController
     respond_to do |format|
       if @comment.save
       format.html { redirect_to blog_path(@blog), notice: 'コメントを更新しました。' }
-      format.js { render :edit }
+      format.js { render :form }
       else
       render 'new'
       end
