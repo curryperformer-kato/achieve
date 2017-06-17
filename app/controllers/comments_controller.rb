@@ -18,25 +18,22 @@ class CommentsController < ApplicationController
 
   def update
     @comment = current_user.comments.build(comment_params)
-    @blog = @comment.blog
+    @comment.update
     respond_to do |format|
       if @comment.save
-        format.html { redirect_to blog_path(@blog), notice: 'コメントを更新しました。' }
-        format.js { render :index }
-      else
-        format.html { render :update }
+      format.html { redirect_to blog_path(@blog), notice: 'コメントを更新しました。' }
+      format.js { render :index }
       end
     end
   end
 
   def destroy
     @comment = current_user.comments.build(comment_params)
-    @blog = @comment.blog
+    @comment.destroy
     respond_to do |format|
       if @comment.destroy
-        format.html { redirect_to blog_path(@blog), notice: 'コメントを削除しました。' }
-        format.js { render :index }
-        format.html { render :delete }
+      format.html { redirect_to blog_path(@blog), notice: 'コメントを削除しました。' }
+      format.js { render :index }
       end
     end
   end
@@ -46,7 +43,4 @@ class CommentsController < ApplicationController
       params.require(:comment).permit(:blog_id, :content)
     end
 
-    def set_comment
-      @comment = Comment.find(params[:id])
-    end
 end
