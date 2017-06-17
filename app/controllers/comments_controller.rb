@@ -15,20 +15,6 @@ class CommentsController < ApplicationController
     end
   end
 
-  #def edit
-  #end
-
-  #def update
-  #  @comment.update(comment_params)
-  #  respond_to do |format|
-  #    if @comment.save
-  #    format.html { redirect_to blog_path(@blog), notice: 'コメントを更新しました。' }
-  #    else
-  #    render 'new'
-  #    end
-  #  end
-  #end
-
   def destroy
     @comment.destroy
     respond_to do |format|
