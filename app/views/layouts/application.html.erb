@@ -43,6 +43,7 @@
             <li><%= link_to "ブログ", blogs_path %></li>
             <li><%= link_to "ポエム", poems_path %></li>
             <li><%= link_to "ポエム（her）", herpoems_path %></li>
+            <li><%= link_to 'ユーザー一覧', users_path if user_signed_in? %></li>
           </ul>
         </li>
 　　　　<% if user_signed_in? %>
