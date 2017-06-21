@@ -11,14 +11,14 @@
   <div class="row">
     <h3>フォローユーザー 一覧</h3>
     <% @user.followed_users.each do |user| %>
-      <%= render 'relation_index', user: user %>
+      <%= render 'show_index', user: user %>
     <% end %>
   </div>
 
   <div class="row">
     <h3>フォローワーユーザー 一覧</h3>
     <% @user.followers.each do |user| %>
-      <%= render 'relation_index', user: user %>
+      <%= render 'show_index', user: user %>
     <% end %>
   </div>
 
