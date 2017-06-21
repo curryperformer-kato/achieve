@@ -1,0 +1,29 @@
+<div class="container-fluid">
+  <div class="wrapper col-md-6 col-md-offset-3 col-sm-10">
+
+  <div class="row">
+    <div class="prof_img img_float">
+      <%= profile_img(@user) if profile_img(@user) %>
+    </div>
+    <h2><%= @user.email %></h2>
+  </div>
+
+  <div class="row">
+    <h3>フォローユーザー 一覧</h3>
+    <% @user.followed_users.each do |user| %>
+      <%= render 'relation_index', user: user %>
+    <% end %>
+  </div>
+
+  <div class="row">
+    <h3>フォローワーユーザー 一覧</h3>
+    <% @user.followers.each do |user| %>
+      <%= render 'relation_index', user: user %>
+    <% end %>
+  </div>
+
+  <div>
+    <br><%= link_to 'Back', users_path, class: 'btn btn-default btn-sm btn-success' %>
+  </div>
+  </div>
+</div>
