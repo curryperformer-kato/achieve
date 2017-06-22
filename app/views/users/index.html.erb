@@ -2,12 +2,12 @@
   <h2>ユーザー一覧</h2>
   <% @users.each do |user| %>
       <div class="container-child col-md-4 col-sm-6 col-xs-6 ">
-        <%= profile_img(user) %>
-         <%= user.name %>
-         <%= user.email %>
+        <p><%= profile_img(user) %></p>
+         <p><%= user.name %></p>
+         <p><%= user.email %></p>
          <% if user.id != current_user.id %>
            <li>
-             <%= render partial: 'follow_form', locals: { user: user } if signed_in? %>
+             <p><%= render partial: 'follow_form', locals: { user: user } if signed_in? %></p>
            </li>
         <% end %>
         <%= link_to '詳細', user_path(user.id) %>
