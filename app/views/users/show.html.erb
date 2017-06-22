@@ -1,29 +1,26 @@
-<div class="container-fluid">
-  <div class="wrapper col-md-6 col-md-offset-3 col-sm-10">
-
+<div class="container">
+  <div class="row">  
+    <h2>ユーザー詳細</h2>
+  </div>
+  
   <div class="row">
-    <div class="prof_img img_float">
-      <%= profile_img(@user) if profile_img(@user) %>
-    </div>
-    <h2><%= @user.email %></h2>
+    <h4><%= @user.name %>がフォロー中</h4>
+      <% @user.followed_users.each do |user| %>
+      <div class="col-md-2 col-sm-4 col-xs-6 ">
+        <%= render 'detail_form', user: user %>
+      </div>
+      <% end %>
   </div>
-
+    
   <div class="row">
-    <h3>フォローユーザー 一覧</h3>
-    <% @user.followed_users.each do |user| %>
-      <%= render 'relation_index', user: user %>
-    <% end %>
+    <h4><%= @user.name %>のフォロワー</h4>
+      <% @user.followers.each do |user| %>
+      <div class="col-md-2 col-sm-4 col-xs-6 ">
+        <%= render 'detail_form', user: user %>
+      </div>
+      <% end %>
+     
   </div>
-
-  <div class="row">
-    <h3>フォローワーユーザー 一覧</h3>
-    <% @user.followers.each do |user| %>
-      <%= render 'relation_index', user: user %>
-    <% end %>
-  </div>
-
-  <div>
-    <br><%= link_to 'Back', users_path, class: 'btn btn-default btn-sm btn-success' %>
-  </div>
-  </div>
+  
+  <%= link_to '戻る', :back %>
 </div>
