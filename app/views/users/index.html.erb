@@ -6,9 +6,7 @@
          <p><%= user.name %></p>
          <p><%= user.email %></p>
          <% if user.id != current_user.id %>
-           <li>
-             <p><%= render partial: 'follow_form', locals: { user: user } if signed_in? %></p>
-           </li>
+             <%= render partial: 'follow_form', locals: { user: user } if signed_in? %>
         <% end %>
         <%= link_to '詳細', user_path(user.id) %>
       </div>
