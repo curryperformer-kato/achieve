@@ -62,6 +62,7 @@ gem 'omniauth-facebook'
 gem 'carrierwave'
 gem 'rmagick'
 gem 'mini_magick'
+gem 'pusher'
 
 group :development do
 gem 'dotenv-rails'
