@@ -17,6 +17,10 @@ Rails.application.routes.draw do
       post :confirm
     end
   end
+
+  resources :conversations do
+    resources :messages
+  end
   
   resources :poems, only: [:index, :show]
   resources :herpoems, only: [:index,:show]
