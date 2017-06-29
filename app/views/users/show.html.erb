@@ -23,13 +23,6 @@
   
   <div class="row">
     <h4><%= @user.name %>とのメッセージ</h4>
-      <% @conversations.each do |conversation| %>
-        <td>
-          <% if conversation.target_user(current_user).present? %>
-            <%= link_to conversation.target_user(current_user).name, conversation_messages_path(conversation)%>
-          <% end %>          
-        </td>
-      <% end %>
   </div>
   
   <%= link_to '戻る', :back %>
