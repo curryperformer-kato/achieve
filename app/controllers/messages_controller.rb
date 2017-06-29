@@ -17,7 +17,7 @@ class MessagesController < ApplicationController
 
     if @messages.last
       if @messages.last.user_id != current_user.id
-       @messages.last.read = true
+        @messages.last.read = true
       end
     end
 
@@ -30,9 +30,9 @@ class MessagesController < ApplicationController
       redirect_to conversation_messages_path(@conversation)
     end
   end
-  
+
   private
-  def message_params
-    params.require(:message).permit(:body, :user_id)
-  end
+    def message_params
+      params.require(:message).permit(:body, :user_id)
+    end
 end
