@@ -23,11 +23,13 @@
   
   <div class="row">
     <h4><%= @user.name %>とのメッセージ</h4>
+    <% @users.each do |user| %>
       <% if user.id != current_user.id %>
         <div class="item">
           <%= link_to 'メッセージ', conversations_path(sender_id: current_user.id, recipient_id: user.id), method: 'post'%>
         </div>
       <% end %>
+    <% end %>
   </div>
   
   <%= link_to '戻る', :back %>
