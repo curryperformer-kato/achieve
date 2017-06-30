@@ -1,8 +1,8 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>Achieve</title>
   <script src="https://js.pusher.com/4.0/pusher.min.js"></script>
+  <title>Achieve</title>
   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
   <%= csrf_meta_tags %>
@@ -18,6 +18,9 @@
       channel.bind('comment_created', function(data) {
         alert(data.message);
       });
+       channel.bind('notification_created', function(data) {
+        $('#unread_count').html(data.unread_counts);
+      });      
     </script>
   <% end %>
 </head>
@@ -67,6 +70,9 @@
 　　　　<% else %>
   　　　　　　<li><%= link_to 'ログイン', new_user_session_path  %></li>
 　　　　  <li><%= link_to 'サインアップ', new_user_registration_path %></li>
+　　　　<% end %>
+　　　　<%= link_to  notifications_index_path, class: "navbar-brand" do %>
+　　　　  <i class="fa fa-bell fa-1x"><span id="unread_count"><%= @notifications_count %></span></i>
 　　　　<% end %>
       </ul>
     </div><!-- /.navbar-collapse -->
