@@ -1,13 +1,13 @@
 Rails.application.routes.draw do
 
+  resources :notifications, only: [:index]
+
   mount RailsAdmin::Engine => '/admin', as: 'rails_admin'
   
   devise_for :users, controllers: {
     registrations: "users/registrations",
     omniauth_callbacks: "users/omniauth_callbacks"
   }
-
-  resources :notifications, only: [:index]
   
   resources :blogs do
     resources :comments
