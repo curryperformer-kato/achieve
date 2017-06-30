@@ -18,24 +18,13 @@
       channel.bind('comment_created', function(data) {
         alert(data.message);
       });
-       channel.bind('notification_created', function(data) {
+      channel.bind('notification_created', function(data) {
         $('#unread_count').html(data.unread_counts);
       });      
     </script>
   <% end %>
 </head>
 <body>
-
-　<!--
-  <header>
-    <ul>
-      <li><%= link_to "Achieve", root_path %></li>
-      <li><%= link_to "トップページ", root_path %></li>
-      <li><%= link_to "お問い合わせ", new_contact_path %></li>
-      <li><%= link_to "ブログ", blogs_path %></li>
-    </ul>
-  </header>
-　-->
 
 <header>
 <nav class="navbar navbar-default">
