@@ -1,6 +1,6 @@
 Rails.application.routes.draw do
 
-  resources :notifications, only: [:index]
+  get 'notifications/index'
 
   mount RailsAdmin::Engine => '/admin', as: 'rails_admin'
   
