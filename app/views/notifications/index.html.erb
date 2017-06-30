@@ -6,6 +6,7 @@
       <ul>
         <% @notifications.each do |notification| %>
         <hr>
+        　<div class ="detail">
           <li>
             <span class="read"><%= notification.read ? '既読' : '未読' %></span>
             <p>
