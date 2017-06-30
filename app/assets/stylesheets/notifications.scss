@@ -3,9 +3,13 @@
 // You can use Sass (SCSS) here: http://sass-lang.com/
 .title{
     text-decoration:underline;
-    text-decoration-color:#FDE406;
+    text-decoration-color:#FDC806;
+    list-style: none;
 }
 
 .read{
-    color: #06B7FD;
+    background-color: white;
+    padding: 3px;
+    color: #FDC806;
+    font-weight:bold;
 }

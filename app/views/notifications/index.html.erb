@@ -2,11 +2,11 @@
   <div class ="wrapper col-md-8 col-md-offset-2 col-sm-10">
     <div class ="title">
       <h2>お知らせ</h2>
+    </div>
       <ul>
         <% @notifications.each do |notification| %>
         <hr>
           <li>
-           <li class="detail">
             <span class="read"><%= notification.read ? '既読' : '未読' %></span>
             <p>
               <%= notification.comment.user.try(:name) %>さんが
