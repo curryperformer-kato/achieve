@@ -6,6 +6,8 @@ Rails.application.routes.draw do
     registrations: "users/registrations",
     omniauth_callbacks: "users/omniauth_callbacks"
   }
+
+  resources :notifications, only: [:index]
   
   resources :blogs do
     resources :comments
@@ -21,12 +23,11 @@ Rails.application.routes.draw do
   resources :conversations do
     resources :messages
   end
-  
+
   resources :poems, only: [:index, :show]
   resources :herpoems, only: [:index,:show]
   resources :users, only: [:index,:show]
   resources :relationships, only: [:create, :destroy]
-  resources :notifications, only: [:index]
 
   root 'top#index'
 
