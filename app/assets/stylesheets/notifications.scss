@@ -2,15 +2,14 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 .notice{
-    background-color: pink;
-    padding: 50px 100px;
+    text-decoration:underline;
+    text-decoration-color:#FDE406;
 }
 
 .detail{
     list-style: none;
 }
 
-.check{
-    background-color: red;
-    padding: 3px;
+.read{
+    color: #06B7FD;
 }

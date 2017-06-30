@@ -1,13 +1,13 @@
 <div class ="container">
   <div class ="wrapper col-md-8 col-md-offset-2 col-sm-10">
-    <div class ="notice">
+    <div class ="title">
       <h2>お知らせ</h2>
       <ul>
         <% @notifications.each do |notification| %>
         <hr>
           <li>
            <li class="detail">
-            <span class="check"><%= notification.read ? '既読' : '未読' %></span>
+            <span class="read"><%= notification.read ? '既読' : '未読' %></span>
             <p>
               <%= notification.comment.user.try(:name) %>さんが
               あなたのブログ（<%= link_to "#{notification.comment.blog.title}", blog_path(notification.comment.blog, notification_id: notification.id) %>）にコメントしました。
