@@ -12,7 +12,7 @@ gem 'uglifier', '>= 1.3.0'
 # Use CoffeeScript for .coffee assets and views
 gem 'coffee-rails', '~> 4.1.0'
 # See https://github.com/rails/execjs#readme for more supported runtimes
-# gem 'therubyracer', platforms: :ruby
+gem 'therubyracer', platforms: :ruby
 
 # Use jquery as the JavaScript library
 gem 'jquery-rails'
@@ -45,6 +45,13 @@ group :development, :test do
   # DIVE 13
   gem 'pry-rails'
   gem 'better_errors'
+
+  # DIVE 20-2
+  gem 'capistrano', '3.6.0'
+  gem 'capistrano-bundler'
+  gem 'capistrano-rails'
+  gem 'capistrano-rbenv'
+  gem 'capistrano3-unicorn'
 end
 
 gem 'twitter-bootstrap-rails'
@@ -63,7 +70,6 @@ gem 'carrierwave'
 gem 'rmagick'
 gem 'mini_magick'
 gem 'pusher'
-
-group :development do
+gem 'fog'
+gem 'unicorn'
 gem 'dotenv-rails'
-end
