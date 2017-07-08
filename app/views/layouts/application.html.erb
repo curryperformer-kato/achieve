@@ -10,8 +10,8 @@
   <% if user_signed_in? %>
     <script>
       var pusher = new Pusher('<%= ENV["PUSHER_KEY"] %>',{
-        encrypted: true
-        cluster: 'ap1',
+      　cluster: 'ap1',
+      　encrypted: true
       });
 
       var channel = pusher.subscribe("user_<%= current_user.id %>_channel");
@@ -60,7 +60,7 @@
   　　　　　　<li><%= link_to 'ログイン', new_user_session_path  %></li>
 　　　　  <li><%= link_to 'サインアップ', new_user_registration_path %></li>
 　　　　<% end %>
-        <%= link_to  notifications_index_path, class: "navbar-brand" do %>
+        <%= link_to notifications_index_path, class: "navbar-brand" do %>
 　　　　  <i class="fa fa-bell fa-1x"><span id="unread_count"><%= @notifications_count %></span></i>
 　　　　<% end %>
       </ul>
